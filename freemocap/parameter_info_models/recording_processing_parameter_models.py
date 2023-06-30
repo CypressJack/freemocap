@@ -16,6 +16,9 @@ class MediapipeParametersModel(BaseModel):
     static_image_mode: bool = False
     skip_2d_image_tracking: bool = False
 
+    class Config:
+        protected_namespaces = ()
+
 
 class AniposeTriangulate3DParametersModel(BaseModel):
     confidence_threshold_cutoff: float = 0.5
