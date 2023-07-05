@@ -10,14 +10,11 @@ logger = logging.getLogger(__name__)
 
 
 class MediapipeParametersModel(BaseModel):
-    model_complexity: int = 2
+    mediapipe_model_complexity: int = 2
     min_detection_confidence: float = 0.5
     min_tracking_confidence: float = 0.5
     static_image_mode: bool = False
     skip_2d_image_tracking: bool = False
-
-    class Config:
-        protected_namespaces = ()
 
 
 class AniposeTriangulate3DParametersModel(BaseModel):
@@ -30,6 +27,7 @@ class ButterworthFilterParametersModel(BaseModel):
     sampling_rate: float = 30
     cutoff_frequency: float = 7
     order: int = 4
+
 
 class PostProcessingParametersModel(BaseModel):
     framerate: float = 30.0
